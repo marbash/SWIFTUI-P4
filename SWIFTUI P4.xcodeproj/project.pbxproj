@@ -13,6 +13,7 @@
 		09B4803F246484C900B032D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09B4803E246484C900B032D6 /* Assets.xcassets */; };
 		09B48042246484C900B032D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09B48041246484C900B032D6 /* Preview Assets.xcassets */; };
 		09B48045246484C900B032D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09B48043246484C900B032D6 /* LaunchScreen.storyboard */; };
+		09B4804D2464A2ED00B032D6 /* KhatmaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B4804C2464A2ED00B032D6 /* KhatmaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		09B48041246484C900B032D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		09B48044246484C900B032D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09B48046246484C900B032D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09B4804C2464A2ED00B032D6 /* KhatmaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhatmaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				09B48038246484C900B032D6 /* AppDelegate.swift */,
 				09B4803A246484C900B032D6 /* SceneDelegate.swift */,
 				09B4803C246484C900B032D6 /* ContentView.swift */,
+				09B4804C2464A2ED00B032D6 /* KhatmaView.swift */,
 				09B4803E246484C900B032D6 /* Assets.xcassets */,
 				09B48043246484C900B032D6 /* LaunchScreen.storyboard */,
 				09B48046246484C900B032D6 /* Info.plist */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B4804D2464A2ED00B032D6 /* KhatmaView.swift in Sources */,
 				09B48039246484C900B032D6 /* AppDelegate.swift in Sources */,
 				09B4803B246484C900B032D6 /* SceneDelegate.swift in Sources */,
 				09B4803D246484C900B032D6 /* ContentView.swift in Sources */,
