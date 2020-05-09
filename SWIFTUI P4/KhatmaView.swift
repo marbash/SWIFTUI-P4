@@ -4,7 +4,7 @@
 //
 //  Created by MOHD ALARBASH on 5/7/20.
 //  Copyright © 2020 MOHD ALARBASH. All rights reserved.
-//
+// Day 4 - Classwork 10
 
 import SwiftUI
 
@@ -32,9 +32,7 @@ struct KhatmaView: View {
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .padding()
-                .onTapGesture {
-//                    self.thekr = athkar.randomElement()!
-                        }
+                
                         Stepper("كم ختمة تريد أن تختم في هذا الشهر؟ ", value: $counter, in: 1...100)
                                 .foregroundColor(.white)
                                 .padding()
