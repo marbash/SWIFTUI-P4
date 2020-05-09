@@ -8,6 +8,9 @@
 
 import SwiftUI
 import AudioToolbox
+import AVFoundation
+
+var music: AVAudioPlayer!
 
 struct Fields {
     var text: String
@@ -38,13 +41,18 @@ struct TicTacToeView: View {
             {
                 winner = "\(p) Wins!!"
                 
+                for i in 0..<3 {
+                    for y in 0..<3 {
+                        self.fields[i][y].enabled = false
+                    }
+                }
 //                ForEach(0..<3) { r in
 //                    ForEach(0..<3) { c in
 //
 //                        self.fields[r][c].enabled = false
 //
 //                    }
-                    
+//
 //                }
                 
             }
@@ -71,15 +79,49 @@ struct TicTacToeView: View {
         
     }
     
+    func playMusic(play: Bool) {
+        if let musicURL = Bundle.main.url(forResource: "PhantomFromSpace", withExtension: "mp3") {
+            if let audioPlayer = try? AVAudioPlayer(contentsOf: musicURL) {
+                music = audioPlayer
+                music.numberOfLoops = 0
+                if play == true{
+                
+                music.play()
+                //
+                } else {
+                        music.stop()
+                    }
+                
+                }
+            }
+        }
+    
+    @State var isPlaying: Bool = false
     var body: some View {
         
+        ZStack {
+        
+            BG()
+            
         
         VStack (spacing: 10){
+            
+            Button(action: {
+                //Code
+                self.isPlaying.toggle()
+                self.playMusic(play: self.isPlaying)
+                
+            }) {
+                Text(isPlaying ? "Stop Music":"Play Music")
+                    .foregroundColor(.white)
+            }
+            
             Text(winner)
                 .font(.system(size: 50, weight: .bold, design: .rounded))
-                .foregroundColor(.red)
+                .foregroundColor(.white)
             Text("\(currentPlayer) Turn")
                 .font(.system(size: 50, weight: .bold, design: .rounded))
+                .foregroundColor(.white)
             
             ForEach(0..<3) { r in
                 HStack(spacing: 10){
@@ -120,6 +162,20 @@ struct TicTacToeView: View {
                 }
             }
         }
+    }
+}
+}
+
+struct BG: View {
+    var body: some View {
+        VStack{
+        Image("BG")
+            .resizable()
+            .scaledToFill()
+            .edgesIgnoringSafeArea(.all)
+            //.frame(height: 50)
+        Spacer()
+        }.background(Color.black).edgesIgnoringSafeArea(.all)
     }
 }
 

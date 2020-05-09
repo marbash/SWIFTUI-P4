@@ -15,6 +15,7 @@
 		09B48045246484C900B032D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09B48043246484C900B032D6 /* LaunchScreen.storyboard */; };
 		09B4804D2464A2ED00B032D6 /* KhatmaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B4804C2464A2ED00B032D6 /* KhatmaView.swift */; };
 		09B4804F24655ECE00B032D6 /* TicTacToeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B4804E24655ECE00B032D6 /* TicTacToeView.swift */; };
+		09CCC19E246740B500F3ADD8 /* PhantomFromSpace.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09CCC19D246740B500F3ADD8 /* PhantomFromSpace.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		09B48046246484C900B032D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09B4804C2464A2ED00B032D6 /* KhatmaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhatmaView.swift; sourceTree = "<group>"; };
 		09B4804E24655ECE00B032D6 /* TicTacToeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeView.swift; sourceTree = "<group>"; };
+		09CCC19D246740B500F3ADD8 /* PhantomFromSpace.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = PhantomFromSpace.mp3; path = ../../../../Downloads/PhantomFromSpace.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		09B48037246484C900B032D6 /* SWIFTUI P4 */ = {
 			isa = PBXGroup;
 			children = (
+				09CCC19D246740B500F3ADD8 /* PhantomFromSpace.mp3 */,
 				09B48038246484C900B032D6 /* AppDelegate.swift */,
 				09B4803A246484C900B032D6 /* SceneDelegate.swift */,
 				09B4803C246484C900B032D6 /* ContentView.swift */,
@@ -142,6 +145,7 @@
 				09B48045246484C900B032D6 /* LaunchScreen.storyboard in Resources */,
 				09B48042246484C900B032D6 /* Preview Assets.xcassets in Resources */,
 				09B4803F246484C900B032D6 /* Assets.xcassets in Resources */,
+				09CCC19E246740B500F3ADD8 /* PhantomFromSpace.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
