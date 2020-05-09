@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import AudioToolbox
 
 struct Fields {
     var text: String
@@ -92,6 +93,7 @@ struct TicTacToeView: View {
                                 self.fields[r][c].enabled = false
                                 self.counter += 1
                                 self.checkWinners()
+                                AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { }
                                 
                             }
                         }) {
