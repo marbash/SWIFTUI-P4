@@ -46,14 +46,14 @@ struct TicTacToeView: View {
                         self.fields[i][y].enabled = false
                     }
                 }
-//                ForEach(0..<3) { r in
-//                    ForEach(0..<3) { c in
-//
-//                        self.fields[r][c].enabled = false
-//
-//                    }
-//
-//                }
+                //                ForEach(0..<3) { r in
+                //                    ForEach(0..<3) { c in
+                //
+                //                        self.fields[r][c].enabled = false
+                //
+                //                    }
+                //
+                //                }
                 
             }
             else if self.counter == 9
@@ -85,96 +85,102 @@ struct TicTacToeView: View {
                 music = audioPlayer
                 music.numberOfLoops = 0
                 if play == true{
-                
-                music.play()
-                //
+                    
+                    music.play()
+                    //
                 } else {
-                        music.stop()
-                    }
-                
+                    music.stop()
                 }
+                
             }
         }
+    }
     
     @State var isPlaying: Bool = false
     var body: some View {
         
         ZStack {
-        
+            
             BG()
             
-        
-        VStack (spacing: 10){
             
-            Button(action: {
-                //Code
-                self.isPlaying.toggle()
-                self.playMusic(play: self.isPlaying)
+            VStack (spacing: 10){
                 
-            }) {
-                Text(isPlaying ? "Stop Music":"Play Music")
-                    .foregroundColor(.white)
-            }
-            
-            Text(winner)
-                .font(.system(size: 50, weight: .bold, design: .rounded))
-                .foregroundColor(.white)
-            Text("\(currentPlayer) Turn")
-                .font(.system(size: 50, weight: .bold, design: .rounded))
-                .foregroundColor(.white)
-            
-            ForEach(0..<3) { r in
-                HStack(spacing: 10){
-                    ForEach(0..<3) { c in
-                        Button(action: {
-                            // when tapping change the current button either to X or O
-                            if self.fields[r][c].enabled
-                            {
-                                self.fields[r][c].text = self.currentPlayer
-                                self.currentPlayer = self.currentPlayer == "X" ? "O" : "X"
-                                self.fields[r][c].enabled = false
-                                self.counter += 1
-                                self.checkWinners()
-                                AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { }
-                                
-                            }
-                        }) {
-                            //
-                            Text(self.fields[r][c].text)
-                                .foregroundColor(.white)
-                                .font(.system(size:50 , weight: .bold, design: .rounded))
-                                .frame(width: 100, height: 100,alignment: .center)
-                                .background(Color.blue)
-                            
-                        }
-                    }
+                Button(action: {
+                    //Code
+                    self.isPlaying.toggle()
+                    self.playMusic(play: self.isPlaying)
+                    
+                }) {
+                    //                Text(isPlaying ? "Stop Music":"Play Music")
+                    //                    .foregroundColor(.white)
+                    Image(systemName: isPlaying ?"stop.circle":"play.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height:50)
+                        .foregroundColor(.white)
+                        //.background(Color.black)
                 }
                 
-            }
-            Button(action: {
-                //code
-                self.restartGame()
-            }) {
-                if winner != ""
-                {
-                    Text("Restart Game")
-                        .font(.system(size:30,weight:.bold,design:.rounded))
+                Text(winner)
+                    .font(.system(size: 50, weight: .bold, design: .rounded))
+                    .foregroundColor(.white)
+                Text("\(currentPlayer) Turn")
+                    .font(.system(size: 50, weight: .bold, design: .rounded))
+                    .foregroundColor(.white)
+                
+                ForEach(0..<3) { r in
+                    HStack(spacing: 10){
+                        ForEach(0..<3) { c in
+                            Button(action: {
+                                // when tapping change the current button either to X or O
+                                if self.fields[r][c].enabled
+                                {
+                                    self.fields[r][c].text = self.currentPlayer
+                                    self.currentPlayer = self.currentPlayer == "X" ? "O" : "X"
+                                    self.fields[r][c].enabled = false
+                                    self.counter += 1
+                                    self.checkWinners()
+                                    AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { }
+                                    
+                                }
+                            }) {
+                                //
+                                Text(self.fields[r][c].text)
+                                    .foregroundColor(.white)
+                                    .font(.system(size:50 , weight: .bold, design: .rounded))
+                                    .frame(width: 100, height: 100,alignment: .center)
+                                    .background(Color.blue)
+                                
+                            }
+                        }
+                    }
+                    
+                }
+                Button(action: {
+                    //code
+                    self.restartGame()
+                }) {
+                    if winner != ""
+                    {
+                        Text("Restart Game")
+                            .font(.system(size:30,weight:.bold,design:.rounded))
+                    }
                 }
             }
         }
     }
 }
-}
 
 struct BG: View {
     var body: some View {
         VStack{
-        Image("BG")
-            .resizable()
-            .scaledToFill()
-            .edgesIgnoringSafeArea(.all)
+            Image("BG")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
             //.frame(height: 50)
-        Spacer()
+            Spacer()
         }.background(Color.black).edgesIgnoringSafeArea(.all)
     }
 }
